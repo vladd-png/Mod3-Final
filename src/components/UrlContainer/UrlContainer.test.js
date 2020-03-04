@@ -4,11 +4,6 @@ import { setUrls } from '../../actions';
 import { shallow } from 'enzyme';
 import { urls } from '../../reducers/urls.js';
 
-// actions
-// reducers
-// mapStateToProps
-// mapDispatchToProps
-
 describe('UrlContainer', () => {
   let wrapper;
 
