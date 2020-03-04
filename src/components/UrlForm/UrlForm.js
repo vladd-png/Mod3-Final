@@ -21,7 +21,24 @@ class UrlForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
     this.props.addUrls(this.state)
+    this.pushNewurl(this.state)
     this.clearInputs();
+  }
+  pushNewurl = url => {
+    const options = {
+      method: 'POST',
+      body: JSON.stringify({
+        id: Math.random(),
+        long_url: this.state.long_url,
+        title: this.state.title
+      }),
+      headers: {
+        'content-type': 'application/json'
+      }
+    }
+    fetch('http://localhost:3001/api/v1/urls', options)
+      .then(response => response.json())
+      .then(data => console.log(data))
   }
 
   clearInputs = () => {

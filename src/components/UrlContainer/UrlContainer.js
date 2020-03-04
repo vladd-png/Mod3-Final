@@ -20,7 +20,6 @@ export class UrlContainer extends Component {
   }
 
 
-
   render() {
      const urlEls = this.props.urls.map(url => {
        return (
