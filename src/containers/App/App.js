@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 // import { connect } from 'react-redux';
 // import { setUrls } from '../../actions';
-import { getUrls } from '../../apiCalls';
+// import { getUrls } from '../../apiCalls';
 import UrlContainer from '../../components/UrlContainer/UrlContainer';
 import UrlForm from '../../components/UrlForm/UrlForm';
 
