@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import { connect } from 'react-redux';
-import { setUrls } from '../../actions';
+// import { connect } from 'react-redux';
+// import { setUrls } from '../../actions';
 import { getUrls } from '../../apiCalls';
 import UrlContainer from '../../components/UrlContainer/UrlContainer';
 import UrlForm from '../../components/UrlForm/UrlForm';
@@ -26,20 +26,22 @@ export class App extends Component {
           <UrlForm />
         </header>
 
-        <UrlContainer urls={this.props.urls}/>
+        <UrlContainer />
       </main>
     );
   }
 }
 
-export const mapStateToProps = ({ urls }) => ({
-  urls
-});
+// export const mapStateToProps = ({ urls }) => ({
+//   urls
+// });
+//
+// export const mapDispatchToProps = dispatch => {
+//   return {
+//     setUrls: urls => dispatch(setUrls(urls))
+//   }
+// };
+//
+// export default connect(mapStateToProps, mapDispatchToProps)(App);
 
-export const mapDispatchToProps = dispatch => {
-  return {
-    setUrls: urls => dispatch(setUrls(urls))
-  }
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

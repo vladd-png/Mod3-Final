@@ -1,22 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './UrlContainer.css';
+import { connect } from 'react-redux';
+import { setUrls } from '../../actions';
+import { getUrls } from '../../apiCalls';
 
-const UrlContainer = props => {
-  const urlEls = props.urls.map(url => {
+class UrlContainer extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      urls: this.props.urls
+    }
+  }
+  // const urlEls = props.urls.map(url => {
+  //   return (
+  //     <div className="url">
+  //       <h3>{url.title}</h3>
+  //       <a href={url.short_url} target="blank">{url.short_url}</a>
+  //       <p>{url.long_url}</p>
+  //     </div>
+  //   )
+  // })
+
+  render() {
+    console.log(this.props.urls);
+
     return (
-      <div className="url">
-        <h3>{url.title}</h3>
-        <a href={url.short_url} target="blank">{url.short_url}</a>
-        <p>{url.long_url}</p>
-      </div>
+      <section>
+      <p>No urls yet! Find some to shorten!</p>
+      </section>
     )
-  });
-
-  return (
-    <section>
-      { urlEls.length ? urlEls : <p>No urls yet! Find some to shorten!</p> }
-    </section>
-  )
+  }
 }
 
-export default UrlContainer;
+export const mapStateToProps = ({ urls }) => ({
+  urls
+})
+
+export default connect(mapStateToProps)(UrlContainer);
