@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { setUrls } from '../../actions';
 import { connect } from 'react-redux';
+import { postUrl } from '../../apiCalls';
 
-class UrlForm extends Component {
+export class UrlForm extends Component {
   constructor(props) {
     super();
     this.props = props;
     this.state = {
-      id: Math.random().toFixed(2),
       title: '',
       long_url: '',
       short_url: ''
@@ -36,8 +36,7 @@ class UrlForm extends Component {
         'content-type': 'application/json'
       }
     }
-    fetch('http://localhost:3001/api/v1/urls', options)
-      .then(response => response.json())
+    postUrl(options)
       .then(data => console.log(data))
   }
 
