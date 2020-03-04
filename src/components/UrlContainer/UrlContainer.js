@@ -19,6 +19,17 @@ export class UrlContainer extends Component {
     .catch(err => console.error('Error fetching:', err))
   }
 
+  deleteUrl = (id) => {
+    const options = {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json'
+      }
+    }
+    fetch(`http://localhost:3001/api/v1/urls/${id}`, options)
+      .then(response => response.json())
+      .then(data => console.log(data))
+  }
 
   render() {
      const urlEls = this.props.urls.map(url => {
@@ -27,6 +38,7 @@ export class UrlContainer extends Component {
            <h3>{url.title}</h3>
            <a href={url.short_url} target="blank">{url.short_url}</a>
            <p>{url.long_url}</p>
+           <button onClick={() => this.deleteUrl(url.id)}>Remove</button>
          </div>
        )
      })
