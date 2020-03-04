@@ -9,8 +9,7 @@ export class UrlForm extends Component {
     this.props = props;
     this.state = {
       title: '',
-      long_url: '',
-      short_url: ''
+      long_url: ''
     };
   }
 
@@ -41,7 +40,7 @@ export class UrlForm extends Component {
   }
 
   clearInputs = () => {
-    this.setState({title: '', long_url: '', short_url: ''});
+    this.setState({title: '', long_url: ''});
   }
 
   render() {

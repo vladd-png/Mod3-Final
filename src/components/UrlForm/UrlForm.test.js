@@ -34,8 +34,7 @@ describe('UrlForm', () => {
     }
     let mockState ={
       title: 'Jessica Rabbit',
-      long_url: 'http://longesturlever.com',
-      short_url: 'shorter.com'
+      long_url: 'http://longesturlever.com'
     }
     wrapper.setState(mockState)
     wrapper.instance().handleSubmit(mockEvent)
@@ -45,8 +44,7 @@ describe('UrlForm', () => {
   it('should reset state when clearInputs is called', () => {
     let mockState ={
       title: 'Jessica Rabbit',
-      long_url: 'http://longesturlever.com',
-      short_url: 'shorter.com'
+      long_url: 'http://longesturlever.com'
     }
     wrapper.setState(mockState)
     wrapper.instance().clearInputs()
