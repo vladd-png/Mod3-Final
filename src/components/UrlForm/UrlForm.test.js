@@ -32,8 +32,14 @@ describe('UrlForm', () => {
       },
       preventDefault: jest.fn()
     }
+    let mockState ={
+      title: 'Jessica Rabbit',
+      long_url: 'http://longesturlever.com',
+      short_url: 'shorter.com'
+    }
+    wrapper.setState(mockState)
     wrapper.instance().handleSubmit(mockEvent)
-    expect(mockAddUrls).toHaveBeenCalled()
+    expect(mockAddUrls).toHaveBeenCalledWith(mockState)
   })
 
   it('should reset state when clearInputs is called', () => {
