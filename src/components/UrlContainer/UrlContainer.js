@@ -8,7 +8,7 @@ class UrlContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      urls: this.props.urls
+      urls: []
     }
   }
   // const urlEls = props.urls.map(url => {
@@ -23,12 +23,11 @@ class UrlContainer extends Component {
   componentDidMount() {
     getUrls()
       .then(data => this.props.setUrls(data.urls))
+      .then(data => this.setState({ urls: data.urls }))
       .catch(err => console.error('Error fetching:', err));
   }
 
   render() {
-    console.log(this.props.urls);
-
     return (
       <section>
       <p>No urls yet! Find some to shorten!</p>

@@ -6,11 +6,11 @@ import { getUrls } from '../../apiCalls';
 import UrlContainer from '../../components/UrlContainer/UrlContainer';
 import UrlForm from '../../components/UrlForm/UrlForm';
 
-export class App extends Component {
-  constructor(props) {
-    super();
-    this.props = props;
-  }
+const App = () =>  {
+  // constructor(props) {
+  //   super();
+  //   this.props = props;
+  // }
 
   // componentDidMount() {
   //   getUrls()
@@ -18,7 +18,7 @@ export class App extends Component {
   //     .catch(err => console.error('Error fetching:', err));
   // }
 
-  render() {
+  // render() {
     return (
       <main className="App">
         <header>
@@ -29,7 +29,7 @@ export class App extends Component {
         <UrlContainer />
       </main>
     );
-  }
+  // }
 }
 
 // export const mapStateToProps = ({ urls }) => ({
