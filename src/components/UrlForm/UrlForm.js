@@ -53,7 +53,7 @@ class UrlForm extends Component {
   }
 }
 export const mapDispatchToProps = dispatch => ({
-  addUrls: url => (dispatch(setUrls(url)))
+  addUrls: url => ( dispatch(setUrls(url)) )
 })
 
 export default connect(null, mapDispatchToProps)(UrlForm);
