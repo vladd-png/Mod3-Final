@@ -12,11 +12,11 @@ export class App extends Component {
     this.props = props;
   }
 
-  componentDidMount() {
-    getUrls()
-      .then(data => this.props.setUrls(data.urls))
-      .catch(err => console.error('Error fetching:', err));
-  }
+  // componentDidMount() {
+  //   getUrls()
+  //     .then(data => this.props.setUrls(data.urls))
+  //     .catch(err => console.error('Error fetching:', err));
+  // }
 
   render() {
     return (

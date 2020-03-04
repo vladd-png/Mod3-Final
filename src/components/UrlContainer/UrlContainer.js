@@ -20,6 +20,11 @@ class UrlContainer extends Component {
   //     </div>
   //   )
   // })
+  componentDidMount() {
+    getUrls()
+      .then(data => this.props.setUrls(data.urls))
+      .catch(err => console.error('Error fetching:', err));
+  }
 
   render() {
     console.log(this.props.urls);
@@ -32,8 +37,14 @@ class UrlContainer extends Component {
   }
 }
 
+export const mapDispatchToProps = dispatch => {
+  return {
+    setUrls: urls => dispatch(setUrls(urls))
+  }
+};
+
 export const mapStateToProps = ({ urls }) => ({
   urls
 })
 
-export default connect(mapStateToProps)(UrlContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(UrlContainer);
