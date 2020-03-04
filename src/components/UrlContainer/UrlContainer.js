@@ -5,7 +5,7 @@ import { setUrls } from '../../actions';
 import { getUrls } from '../../apiCalls';
 let urlEls = [];
 
-class UrlContainer extends Component {
+export class UrlContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -23,7 +23,6 @@ class UrlContainer extends Component {
 
   render() {
      const urlEls = this.props.urls.map(url => {
-      console.log(url)
        return (
          <div className="url">
            <h3>{url.title}</h3>
